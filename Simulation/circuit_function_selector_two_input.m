@@ -1,0 +1,37 @@
+function [funct_vec, funct_num] = circuit_function_selector_two_input(M)
+m = 2; % Number of inputs
+input_combos = m^2; % Number of input combinations
+num_functions = input_combos^2; % Number of functions
+
+
+f = zeros(input_combos, num_functions);
+%  Calculate the f vectors
+index_counter = 1;
+for one_one = 0:1
+    for one_zero = 0:1
+        for zero_one = 0:1
+            for zero_zero = 0:1
+                f(:, index_counter) = [zero_zero; zero_one; one_zero; one_one];
+                index_counter = index_counter + 1;
+            end
+        end
+    end
+end
+    
+    
+%  Now, determine the probability vector
+p_f = zeros(1, num_functions);
+for current_function = 1:num_functions
+    prob = 1;
+    for current_input_combo = 1:input_combos     
+        prob = prob*M(current_input_combo, f(current_input_combo,current_function)+1);
+    end
+    p_f(current_function) = prob;
+end
+
+% Select a function
+chosen_funct = discrete_distribution_sampler(p_f, [1:num_functions]);
+funct_num = chosen_funct;
+funct_vec = f(:,chosen_funct);
+
+end

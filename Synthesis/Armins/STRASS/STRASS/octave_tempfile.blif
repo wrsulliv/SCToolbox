@@ -1,0 +1,73 @@
+.model octave_tempfile
+
+.inputs x1 x2 x3 r1 r2
+
+.outputs z
+
+
+
+.names x1 ONE
+0 1
+1 1
+
+.names ONE ZERO
+1 0
+
+.names x1 x2 x3 wire1_1 wire2_1 wire3_1 wire4_1 wire5_1 wire6_1 wire7_1 wire8_1 z
+0001------- 1
+001-1------ 1
+010--1----- 1
+011---1---- 1
+100----1--- 1
+101-----1-- 1
+110------1- 1
+111-------1 1
+
+
+
+.names ONE wire1_1
+1 1
+
+
+
+.names ONE wire2_1
+1 1
+
+
+
+.names ONE wire3_1
+1 1
+
+
+
+.names r1 wire4_2 wire4_1
+11 1
+
+.names r2 wire4_3 wire4_2
+11 1
+
+.names r3 wire4_4 wire4_3
+11 1
+
+
+
+.names ONE wire5_1
+1 1
+
+
+
+.names wire4_1 wire6_1
+1 1
+
+
+
+.names wire4_1 wire7_1
+1 1
+
+
+
+.names ZERO wire8_1
+1 1
+
+
+.end

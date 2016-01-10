@@ -1,0 +1,54 @@
+.model alaki__AsymICCD
+
+.inputs x1 x2 r1 r2 r3 r4
+
+.outputs z
+
+
+
+.names x1 ONE
+0 1
+1 1
+
+.names ONE ZERO
+1 0
+
+.names x1 x2 wire1 wire2 wire3 wire4 z
+001--- 1
+01-1-- 1
+10--1- 1
+11---1 1
+
+
+.names r1 r2 r3 r4 wire1
+0000 1
+0001 1
+0010 1
+
+
+.names r1 r2 r3 r4 wire2
+
+
+.names r1 r2 r3 r4 wire3
+0000 1
+0001 1
+0010 1
+0011 1
+0100 1
+0101 1
+0110 1
+0111 1
+1000 1
+1001 1
+
+
+.names r1 r2 r3 r4 wire4
+0000 1
+0001 1
+0010 1
+0011 1
+0100 1
+0101 1
+
+
+.end
