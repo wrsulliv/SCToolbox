@@ -1,0 +1,303 @@
+.model alaki_final_test_BernTCAD
+
+.inputs x1 x2 x3 x4 x5 x6 r1 r2 r3 r4 r5 r6 r7 r8 r9 r10
+
+.outputs z
+
+
+.names x1 x2 x3 x4 x5 x6 add0
+000001 1
+000010 1
+000100 1
+000111 1
+001000 1
+001011 1
+001101 1
+001110 1
+010000 1
+010011 1
+010101 1
+010110 1
+011001 1
+011010 1
+011100 1
+011111 1
+100000 1
+100011 1
+100101 1
+100110 1
+101001 1
+101010 1
+101100 1
+101111 1
+110001 1
+110010 1
+110100 1
+110111 1
+111000 1
+111011 1
+111101 1
+111110 1
+
+.names x1 x2 x3 x4 x5 x6 add1
+000011 1
+000101 1
+000110 1
+000111 1
+001001 1
+001010 1
+001011 1
+001100 1
+001101 1
+001110 1
+010001 1
+010010 1
+010011 1
+010100 1
+010101 1
+010110 1
+011000 1
+011001 1
+011010 1
+011100 1
+100001 1
+100010 1
+100011 1
+100100 1
+100101 1
+100110 1
+101000 1
+101001 1
+101010 1
+101100 1
+110000 1
+110001 1
+110010 1
+110100 1
+111000 1
+111111 1
+
+.names x1 x2 x3 x4 x5 x6 add2
+001111 1
+010111 1
+011011 1
+011101 1
+011110 1
+011111 1
+100111 1
+101011 1
+101101 1
+101110 1
+101111 1
+110011 1
+110101 1
+110110 1
+110111 1
+111001 1
+111010 1
+111011 1
+111100 1
+111101 1
+111110 1
+111111 1
+
+
+.names add2 add1 add0 wire1_1 wire2_1 wire3_1 wire4_1 wire5_1 wire6_1 wire7_1 z
+0001------ 1
+001-1----- 1
+010--1---- 1
+011---1--- 1
+100----1-- 1
+101-----1- 1
+110------1 1
+
+
+.names x1 ONE
+0 1
+1 1
+
+.names ONE ZERO
+1 0
+
+
+
+
+.names r1 wire1_2 wire1_1
+11 1
+
+.names r2 wire1_3 wire1_2
+11 1
+
+.names r3 wire1_4 wire1_3
+11 1
+
+.names r4 wire1_5 wire1_4
+00 0
+
+.names r5 wire1_6 wire1_5
+00 0
+
+.names r6 wire1_7 wire1_6
+11 1
+
+.names r7 wire1_8 wire1_7
+11 1
+
+.names r8 wire1_9 wire1_8
+11 1
+
+.names r9 wire1_10 wire1_9
+00 0
+
+.names ZERO wire1_10
+1 1
+
+
+
+.names r1 wire2_2 wire2_1
+00 0
+
+.names r2 wire2_3 wire2_2
+11 1
+
+.names r3 wire2_4 wire2_3
+00 0
+
+.names wire1_4 wire2_4
+1 1
+
+
+
+.names r1 wire3_2 wire3_1
+11 1
+
+.names r2 wire3_3 wire3_2
+00 0
+
+.names r3 wire3_4 wire3_3
+11 1
+
+.names r4 wire3_5 wire3_4
+00 0
+
+.names r5 wire3_6 wire3_5
+00 0
+
+.names r6 wire3_7 wire3_6
+11 1
+
+.names r7 wire3_8 wire3_7
+11 1
+
+.names r8 wire3_9 wire3_8
+00 0
+
+.names ZERO wire3_9
+1 1
+
+
+
+.names r1 wire4_2 wire4_1
+00 0
+
+.names r2 wire4_3 wire4_2
+00 0
+
+.names r3 wire4_4 wire4_3
+00 0
+
+.names r4 wire4_5 wire4_4
+00 0
+
+.names r5 wire4_6 wire4_5
+00 0
+
+.names r6 wire4_7 wire4_6
+00 0
+
+.names r7 wire4_8 wire4_7
+00 0
+
+.names r8 wire4_9 wire4_8
+00 0
+
+.names r9 wire4_10 wire4_9
+00 0
+
+.names r10 wire4_11 wire4_10
+00 0
+
+.names ZERO wire4_11
+1 1
+
+
+
+.names r1 wire5_2 wire5_1
+00 0
+
+.names r2 wire5_3 wire5_2
+11 1
+
+.names r3 wire5_4 wire5_3
+00 0
+
+.names r4 wire5_5 wire5_4
+00 0
+
+.names r5 wire5_6 wire5_5
+11 1
+
+.names r6 wire5_7 wire5_6
+11 1
+
+.names wire4_7 wire5_7
+1 1
+
+
+
+.names r1 wire6_2 wire6_1
+00 0
+
+.names r2 wire6_3 wire6_2
+00 0
+
+.names r3 wire6_4 wire6_3
+00 0
+
+.names r4 wire6_5 wire6_4
+00 0
+
+.names r5 wire6_6 wire6_5
+00 0
+
+.names wire4_6 wire6_6
+0 1
+
+
+
+.names r1 wire7_2 wire7_1
+00 0
+
+.names r2 wire7_3 wire7_2
+00 0
+
+.names r3 wire7_4 wire7_3
+00 0
+
+.names r4 wire7_5 wire7_4
+00 0
+
+.names r5 wire7_6 wire7_5
+00 0
+
+.names r6 wire7_7 wire7_6
+00 0
+
+.names r7 wire7_8 wire7_7
+00 0
+
+.names wire1_8 wire7_8
+1 1
+
+
+.end
