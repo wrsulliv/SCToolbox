@@ -1,0 +1,64 @@
+.model alaki__AsymTCADExhaustive
+
+.inputs x1 x2 r1 r2 r3 r4
+
+.outputs z
+
+
+
+.names x1 ONE
+0 1
+1 1
+
+.names ONE ZERO
+1 0
+
+.names x1 x2 wire1_1 wire2_1 wire3_1 wire4_1 z
+001--- 1
+01-1-- 1
+10--1- 1
+11---1 1
+
+
+
+.names r1 wire1_2 wire1_1
+11 1
+
+.names r2 wire1_3 wire1_2
+11 1
+
+.names r3 wire1_4 wire1_3
+00 0
+
+.names r4 wire1_5 wire1_4
+00 0
+
+.names ZERO wire1_5
+1 1
+
+
+
+.names r1 wire2_2 wire2_1
+00 0
+
+.names r2 wire2_3 wire2_2
+11 1
+
+.names r3 wire2_4 wire2_3
+00 0
+
+.names ZERO wire2_4
+1 1
+
+
+
+.names ZERO wire3_1
+1 1
+
+
+
+.names wire2_1 wire4_1
+0 1
+
+
+.end

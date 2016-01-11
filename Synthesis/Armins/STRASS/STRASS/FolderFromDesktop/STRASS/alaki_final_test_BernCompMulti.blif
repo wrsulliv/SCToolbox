@@ -1,0 +1,865 @@
+.model alaki_final_test_BernCompMulti
+
+.inputs x1 x2 x3 x4 x5 x6 r1_1 r2_1 r3_1 r4_1 r5_1 r6_1 r7_1 r8_1 r9_1 r10_1 r1_2 r2_2 r3_2 r4_2 r5_2 r6_2 r7_2 r8_2 r9_2 r10_2 r1_3 r2_3 r3_3 r4_3 r5_3 r6_3 r7_3 r8_3 r9_3 r10_3 r1_4 r2_4 r3_4 r4_4 r5_4 r6_4 r7_4 r8_4 r9_4 r10_4 r1_5 r2_5 r3_5 r4_5 r5_5 r6_5 r7_5 r8_5 r9_5 r10_5 r1_6 r2_6 r3_6 r4_6 r5_6 r6_6 r7_6 r8_6 r9_6 r10_6 r1_7 r2_7 r3_7 r4_7 r5_7 r6_7 r7_7 r8_7 r9_7 r10_7
+
+.outputs z
+
+
+.names x1 x2 x3 x4 x5 x6 add0
+000001 1
+000010 1
+000100 1
+000111 1
+001000 1
+001011 1
+001101 1
+001110 1
+010000 1
+010011 1
+010101 1
+010110 1
+011001 1
+011010 1
+011100 1
+011111 1
+100000 1
+100011 1
+100101 1
+100110 1
+101001 1
+101010 1
+101100 1
+101111 1
+110001 1
+110010 1
+110100 1
+110111 1
+111000 1
+111011 1
+111101 1
+111110 1
+
+.names x1 x2 x3 x4 x5 x6 add1
+000011 1
+000101 1
+000110 1
+000111 1
+001001 1
+001010 1
+001011 1
+001100 1
+001101 1
+001110 1
+010001 1
+010010 1
+010011 1
+010100 1
+010101 1
+010110 1
+011000 1
+011001 1
+011010 1
+011100 1
+100001 1
+100010 1
+100011 1
+100100 1
+100101 1
+100110 1
+101000 1
+101001 1
+101010 1
+101100 1
+110000 1
+110001 1
+110010 1
+110100 1
+111000 1
+111111 1
+
+.names x1 x2 x3 x4 x5 x6 add2
+001111 1
+010111 1
+011011 1
+011101 1
+011110 1
+011111 1
+100111 1
+101011 1
+101101 1
+101110 1
+101111 1
+110011 1
+110101 1
+110110 1
+110111 1
+111001 1
+111010 1
+111011 1
+111100 1
+111101 1
+111110 1
+111111 1
+
+
+.names add2 add1 add0 comp1 comp2 comp3 comp4 comp5 comp6 comp7 z
+0001------ 1
+001-1----- 1
+010--1---- 1
+011---1--- 1
+100----1-- 1
+101-----1- 1
+110------1 1
+
+
+
+
+.names c_1_9 r10_1 carry_1_9 carry_1_10
+10- 1
+001 1
+111 1
+
+
+.names c_1_8 r9_1 carry_1_8 carry_1_9
+10- 1
+001 1
+111 1
+
+
+.names c_1_7 r8_1 carry_1_7 carry_1_8
+10- 1
+001 1
+111 1
+
+
+.names c_1_6 r7_1 carry_1_6 carry_1_7
+10- 1
+001 1
+111 1
+
+
+.names c_1_5 r6_1 carry_1_5 carry_1_6
+10- 1
+001 1
+111 1
+
+
+.names c_1_4 r5_1 carry_1_4 carry_1_5
+10- 1
+001 1
+111 1
+
+
+.names c_1_3 r4_1 carry_1_3 carry_1_4
+10- 1
+001 1
+111 1
+
+
+.names c_1_2 r3_1 carry_1_2 carry_1_3
+10- 1
+001 1
+111 1
+
+
+.names c_1_1 r2_1 carry_1_1 carry_1_2
+10- 1
+001 1
+111 1
+
+
+.names c_1_0 r1_1 carry_1_1
+10 1
+
+
+.names carry_1_10 comp1
+1 1
+
+
+
+
+.names c_2_9 r10_2 carry_2_9 carry_2_10
+10- 1
+001 1
+111 1
+
+
+.names c_2_8 r9_2 carry_2_8 carry_2_9
+10- 1
+001 1
+111 1
+
+
+.names c_2_7 r8_2 carry_2_7 carry_2_8
+10- 1
+001 1
+111 1
+
+
+.names c_2_6 r7_2 carry_2_6 carry_2_7
+10- 1
+001 1
+111 1
+
+
+.names c_2_5 r6_2 carry_2_5 carry_2_6
+10- 1
+001 1
+111 1
+
+
+.names c_2_4 r5_2 carry_2_4 carry_2_5
+10- 1
+001 1
+111 1
+
+
+.names c_2_3 r4_2 carry_2_3 carry_2_4
+10- 1
+001 1
+111 1
+
+
+.names c_2_2 r3_2 carry_2_2 carry_2_3
+10- 1
+001 1
+111 1
+
+
+.names c_2_1 r2_2 carry_2_1 carry_2_2
+10- 1
+001 1
+111 1
+
+
+.names c_2_0 r1_2 carry_2_1
+10 1
+
+
+.names carry_2_10 comp2
+1 1
+
+
+
+
+.names c_3_9 r10_3 carry_3_9 carry_3_10
+10- 1
+001 1
+111 1
+
+
+.names c_3_8 r9_3 carry_3_8 carry_3_9
+10- 1
+001 1
+111 1
+
+
+.names c_3_7 r8_3 carry_3_7 carry_3_8
+10- 1
+001 1
+111 1
+
+
+.names c_3_6 r7_3 carry_3_6 carry_3_7
+10- 1
+001 1
+111 1
+
+
+.names c_3_5 r6_3 carry_3_5 carry_3_6
+10- 1
+001 1
+111 1
+
+
+.names c_3_4 r5_3 carry_3_4 carry_3_5
+10- 1
+001 1
+111 1
+
+
+.names c_3_3 r4_3 carry_3_3 carry_3_4
+10- 1
+001 1
+111 1
+
+
+.names c_3_2 r3_3 carry_3_2 carry_3_3
+10- 1
+001 1
+111 1
+
+
+.names c_3_1 r2_3 carry_3_1 carry_3_2
+10- 1
+001 1
+111 1
+
+
+.names c_3_0 r1_3 carry_3_1
+10 1
+
+
+.names carry_3_10 comp3
+1 1
+
+
+
+
+.names c_4_9 r10_4 carry_4_9 carry_4_10
+10- 1
+001 1
+111 1
+
+
+.names c_4_8 r9_4 carry_4_8 carry_4_9
+10- 1
+001 1
+111 1
+
+
+.names c_4_7 r8_4 carry_4_7 carry_4_8
+10- 1
+001 1
+111 1
+
+
+.names c_4_6 r7_4 carry_4_6 carry_4_7
+10- 1
+001 1
+111 1
+
+
+.names c_4_5 r6_4 carry_4_5 carry_4_6
+10- 1
+001 1
+111 1
+
+
+.names c_4_4 r5_4 carry_4_4 carry_4_5
+10- 1
+001 1
+111 1
+
+
+.names c_4_3 r4_4 carry_4_3 carry_4_4
+10- 1
+001 1
+111 1
+
+
+.names c_4_2 r3_4 carry_4_2 carry_4_3
+10- 1
+001 1
+111 1
+
+
+.names c_4_1 r2_4 carry_4_1 carry_4_2
+10- 1
+001 1
+111 1
+
+
+.names c_4_0 r1_4 carry_4_1
+10 1
+
+
+.names carry_4_10 comp4
+1 1
+
+
+
+
+.names c_5_9 r10_5 carry_5_9 carry_5_10
+10- 1
+001 1
+111 1
+
+
+.names c_5_8 r9_5 carry_5_8 carry_5_9
+10- 1
+001 1
+111 1
+
+
+.names c_5_7 r8_5 carry_5_7 carry_5_8
+10- 1
+001 1
+111 1
+
+
+.names c_5_6 r7_5 carry_5_6 carry_5_7
+10- 1
+001 1
+111 1
+
+
+.names c_5_5 r6_5 carry_5_5 carry_5_6
+10- 1
+001 1
+111 1
+
+
+.names c_5_4 r5_5 carry_5_4 carry_5_5
+10- 1
+001 1
+111 1
+
+
+.names c_5_3 r4_5 carry_5_3 carry_5_4
+10- 1
+001 1
+111 1
+
+
+.names c_5_2 r3_5 carry_5_2 carry_5_3
+10- 1
+001 1
+111 1
+
+
+.names c_5_1 r2_5 carry_5_1 carry_5_2
+10- 1
+001 1
+111 1
+
+
+.names c_5_0 r1_5 carry_5_1
+10 1
+
+
+.names carry_5_10 comp5
+1 1
+
+
+
+
+.names c_6_9 r10_6 carry_6_9 carry_6_10
+10- 1
+001 1
+111 1
+
+
+.names c_6_8 r9_6 carry_6_8 carry_6_9
+10- 1
+001 1
+111 1
+
+
+.names c_6_7 r8_6 carry_6_7 carry_6_8
+10- 1
+001 1
+111 1
+
+
+.names c_6_6 r7_6 carry_6_6 carry_6_7
+10- 1
+001 1
+111 1
+
+
+.names c_6_5 r6_6 carry_6_5 carry_6_6
+10- 1
+001 1
+111 1
+
+
+.names c_6_4 r5_6 carry_6_4 carry_6_5
+10- 1
+001 1
+111 1
+
+
+.names c_6_3 r4_6 carry_6_3 carry_6_4
+10- 1
+001 1
+111 1
+
+
+.names c_6_2 r3_6 carry_6_2 carry_6_3
+10- 1
+001 1
+111 1
+
+
+.names c_6_1 r2_6 carry_6_1 carry_6_2
+10- 1
+001 1
+111 1
+
+
+.names c_6_0 r1_6 carry_6_1
+10 1
+
+
+.names carry_6_10 comp6
+1 1
+
+
+
+
+.names c_7_9 r10_7 carry_7_9 carry_7_10
+10- 1
+001 1
+111 1
+
+
+.names c_7_8 r9_7 carry_7_8 carry_7_9
+10- 1
+001 1
+111 1
+
+
+.names c_7_7 r8_7 carry_7_7 carry_7_8
+10- 1
+001 1
+111 1
+
+
+.names c_7_6 r7_7 carry_7_6 carry_7_7
+10- 1
+001 1
+111 1
+
+
+.names c_7_5 r6_7 carry_7_5 carry_7_6
+10- 1
+001 1
+111 1
+
+
+.names c_7_4 r5_7 carry_7_4 carry_7_5
+10- 1
+001 1
+111 1
+
+
+.names c_7_3 r4_7 carry_7_3 carry_7_4
+10- 1
+001 1
+111 1
+
+
+.names c_7_2 r3_7 carry_7_2 carry_7_3
+10- 1
+001 1
+111 1
+
+
+.names c_7_1 r2_7 carry_7_1 carry_7_2
+10- 1
+001 1
+111 1
+
+
+.names c_7_0 r1_7 carry_7_1
+10 1
+
+
+.names carry_7_10 comp7
+1 1
+
+
+.names x1 ONE
+0 1
+1 1
+
+.names ONE ZERO
+0 1
+
+
+
+.names ZERO c_1_0
+1 1
+
+
+.names ONE c_1_1
+1 1
+
+
+.names ZERO c_1_2
+1 1
+
+
+.names ZERO c_1_3
+1 1
+
+
+.names ZERO c_1_4
+1 1
+
+
+.names ONE c_1_5
+1 1
+
+
+.names ONE c_1_6
+1 1
+
+
+.names ZERO c_1_7
+1 1
+
+
+.names ZERO c_1_8
+1 1
+
+
+.names ZERO c_1_9
+1 1
+
+
+
+
+.names ZERO c_2_0
+1 1
+
+
+.names ONE c_2_1
+1 1
+
+
+.names ZERO c_2_2
+1 1
+
+
+.names ZERO c_2_3
+1 1
+
+
+.names ZERO c_2_4
+1 1
+
+
+.names ONE c_2_5
+1 1
+
+
+.names ONE c_2_6
+1 1
+
+
+.names ONE c_2_7
+1 1
+
+
+.names ZERO c_2_8
+1 1
+
+
+.names ONE c_2_9
+1 1
+
+
+
+
+.names ZERO c_3_0
+1 1
+
+
+.names ZERO c_3_1
+1 1
+
+
+.names ONE c_3_2
+1 1
+
+
+.names ZERO c_3_3
+1 1
+
+
+.names ZERO c_3_4
+1 1
+
+
+.names ONE c_3_5
+1 1
+
+
+.names ONE c_3_6
+1 1
+
+
+.names ZERO c_3_7
+1 1
+
+
+.names ONE c_3_8
+1 1
+
+
+.names ZERO c_3_9
+1 1
+
+
+
+
+.names ONE c_4_0
+1 1
+
+
+.names ONE c_4_1
+1 1
+
+
+.names ONE c_4_2
+1 1
+
+
+.names ONE c_4_3
+1 1
+
+
+.names ONE c_4_4
+1 1
+
+
+.names ONE c_4_5
+1 1
+
+
+.names ONE c_4_6
+1 1
+
+
+.names ONE c_4_7
+1 1
+
+
+.names ONE c_4_8
+1 1
+
+
+.names ONE c_4_9
+1 1
+
+
+
+
+.names ONE c_5_0
+1 1
+
+
+.names ONE c_5_1
+1 1
+
+
+.names ONE c_5_2
+1 1
+
+
+.names ONE c_5_3
+1 1
+
+
+.names ZERO c_5_4
+1 1
+
+
+.names ZERO c_5_5
+1 1
+
+
+.names ONE c_5_6
+1 1
+
+
+.names ONE c_5_7
+1 1
+
+
+.names ZERO c_5_8
+1 1
+
+
+.names ONE c_5_9
+1 1
+
+
+
+
+.names ONE c_6_0
+1 1
+
+
+.names ZERO c_6_1
+1 1
+
+
+.names ZERO c_6_2
+1 1
+
+
+.names ZERO c_6_3
+1 1
+
+
+.names ZERO c_6_4
+1 1
+
+
+.names ONE c_6_5
+1 1
+
+
+.names ONE c_6_6
+1 1
+
+
+.names ONE c_6_7
+1 1
+
+
+.names ONE c_6_8
+1 1
+
+
+.names ONE c_6_9
+1 1
+
+
+
+
+.names ZERO c_7_0
+1 1
+
+
+.names ONE c_7_1
+1 1
+
+
+.names ZERO c_7_2
+1 1
+
+
+.names ONE c_7_3
+1 1
+
+
+.names ONE c_7_4
+1 1
+
+
+.names ONE c_7_5
+1 1
+
+
+.names ONE c_7_6
+1 1
+
+
+.names ONE c_7_7
+1 1
+
+
+.names ONE c_7_8
+1 1
+
+
+.names ONE c_7_9
+1 1
+
+
+
+.end
