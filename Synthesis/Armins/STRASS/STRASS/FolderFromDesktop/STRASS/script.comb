@@ -1,8 +1,0 @@
-source script.rugged
-print_stats
-read_library OSU035.genlib
-map
-print_map_stats
-
-
-
