@@ -10,6 +10,9 @@ clear all;
     hiddenLayerBreadth = 2;
     %N = 2000;
     trainPercentage = 0.95;
+    polynomial_degree = 3;
+    max_iterations = 3;
+    
 
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -22,11 +25,11 @@ clear all;
     nnData = NN_Classification_Sim(seed, hiddenLayerDepth, hiddenLayerBreadth, data,numClasses, trainPercentage);
 
 
-    maxN = 40000
+    maxN = 256
     
 
-        sc_output = SC_NN_Sim_Progressive(nnData, maxN, 64, .1);
-        %sc_output = SC_NN_Sim(nnData, maxN);
+        %sc_output = SC_NN_Sim_Progressive(nnData, maxN, 64, .1);
+        sc_output = SC_NN_Sim(nnData, maxN, polynomial_degree, max_iterations);
         sc_error = NN_Calc_Misclassification_Error(sc_output', nnData.t_test)
         software_output = sim(nnData.net, nnData.phi_test');
         software_output = (software_output - ones(nnData.numClasses, 1)*max(software_output)) >= 0;

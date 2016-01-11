@@ -22,7 +22,7 @@ clear all;
     nnData = NN_Classification_Sim(seed, hiddenLayerDepth, hiddenLayerBreadth, data,numClasses, trainPercentage);
 
    
-maxN = 40000;
+maxN = 10000;
 tol_vec = [1  .5 .1 .05 .01];
 avg_steps = 7;
 

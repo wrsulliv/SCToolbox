@@ -1,15 +1,18 @@
 %  Computes the Maclaurin series of the sigmoid function
 clear
-degree =2;
+degree =3;
 x_range = 0:0.02:1;
-max_iterations = 10;
-IBP_x_range = 1 - 2*x_range;
+max_iterations = 5;
+IBP_x_range = UNIPOL_2_IBP(x_range);
 
 syms a;
 
 % Define a sigmoidal function which is scaled for bi-polar interval
+original_f = 2/(1+exp(-2*a))-1;
+%original_f = 2/(1+exp(-2*a*4))-1;
 %original_f = (2.7*(1 /(1 + exp(-2*a)) - 0.5))/1.8;
-original_f = 0.4375 + 0.25*a - 0.8*a^2;
+%original_f = 0.4375 + 0.25*a - 0.8*a^2;
+%original_f =  0.75*a - 0.25*a^3
 %original_f = 0.36*a^5 - 1.45*a^3 + 1.75*a;
 %original_f = 1 + 2*a + 3*a^2;
 %original_f = 0.34 + 0.2*a + 0.4*a^4
@@ -39,12 +42,12 @@ end
 %poly = [1 2 3 4 5];
 % multi-linear poly = 1 + [2(X1) + 2(X2) + 2(X3)]/3 + [3(X1)(X2) + 3(X2)(X3) + 3(X1)(x3)]/3 + 4(X1)(X2)(X3)      
 
-[f_mult, x, f, f_star, f_star_star, scale_factor] = Synthesize(poly, max_iterations);
+[multi, f, f_star, f_star_star, scale_factor] = Synthesize(poly, max_iterations);
 
-
-% This f_star_star vector is of size 512, where each entry corresponds to a
-% truth table entry of x, r1, r2, r3, r4, r5, r6, r7, r8.  So, now we plot
-% the actual stochastic output
+% (f_star_star) is a vector which encodes the truth table for the
+% synthesized circuit.  But, it is given such that (-1) encodes a 1 and (1)
+% encodes a 0.  So, we convert the truth table from IBP to UP.
+f_star_star = IBP_2_UNIPOL(f_star_star);
 
 sc_len = 10000;
 avg_steps = 1;
@@ -80,7 +83,7 @@ for k = 1:avg_steps
         % At this point, (curr_output) is a bit-stream which 
         % encodes an Inverted bipolar number.  So, we need to convert 
         % from the uni-polar encoding to the inverted bi-polar encoding ...
-        outputs(i) = outputs(i) + (S2D_ARRAY(curr_output, sc_len)); 
+        outputs(i) = outputs(i) + UNIPOL_2_IBP(S2D_ARRAY(curr_output, sc_len)); 
     end
 end
 outputs = outputs ./ avg_steps;
@@ -103,11 +106,11 @@ cmap = colormap(jet)
 num_plots = 5;
 cmap_increment = size(cmap, 1)/num_plots;
 plot(IBP_x_range, subs(original_f, a, IBP_x_range),'-o', 'Color', cmap(8, :));
-plot(IBP_x_range, subs(fliplr(f_mult), x, IBP_x_range), '-x', 'Color', cmap(16, :));
-plot(IBP_x_range, scale_factor*polyval(fliplr(Multi2Poly(f_star_transform)), IBP_x_range), '-*', 'Color', cmap(24, :));
+plot(IBP_x_range, polyval(fliplr(poly),IBP_x_range), '-x', 'Color', cmap(16, :));
+%plot(IBP_x_range, scale_factor*polyval(fliplr(Multi2Poly(f_star_transform)), IBP_x_range), '-*', 'Color', cmap(24, :));
 %plot(IBP_x_range, scale_factor*polyval(fliplr(Multi2Poly(f_star__star_transform)), IBP_x_range), 'Color', cmap(floor(4*cmap_increment), :));
 plot(IBP_x_range, outputs*scale_factor, '-d', 'Color', cmap(56, :));
-legend('Original', 'Multivariate', 'Scaled Multivariate', 'Stochastic');
+legend('Original', 'Polynomial', 'Stochastic');
 axis([-1, 1, -1, 1])
 
 

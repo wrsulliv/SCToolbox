@@ -1,4 +1,4 @@
-function results = SC_NN_Sim(nnData, N)
+function results = SC_NN_Sim(nnData, N, polynomial_degree, max_iterations)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     Prepare for SC
@@ -40,7 +40,10 @@ sc_LW = gdivide(nnData.net.LW, norm_c);
 
 
 FSM_STATES_I = ceil(norm_c*2*nnData.numInputsToNeuronsInLayer(1));
+input_multiplier = norm_c*nnData.numInputsToNeuronsInLayer(1);
+
 FSM_STATES_HO = ceil(norm_c*2*nnData.numInputsToNeuronsInLayer(2));
+hidden_multiplier = norm_c*nnData.numInputsToNeuronsInLayer(2);
     
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -84,7 +87,10 @@ FSM_STATES_HO = ceil(norm_c*2*nnData.numInputsToNeuronsInLayer(2));
                     weights = [sc_IW{1}(k,:)'; sc_b{l}(k)];
                     dec_weights_squished = BIPOL_2_UNIPOL(weights);
                     sc_weights = DEC2SC_ARRAY(dec_weights_squished, N);
-                    neuron_out = NEURON(current_input_normal, sc_weights, FSM_STATES_I,true, false);
+                    
+                    neuron_out = NEURON_SYNTHESIS(current_input_normal, sc_weights, polynomial_degree,max_iterations, input_multiplier, false);
+                    %neuron_out = NEURON(current_input_normal, sc_weights, FSM_STATES_I,true, false);
+                    
                     current_output = [current_output; neuron_out];
                     
                     %  DEBUGGING
@@ -100,7 +106,9 @@ FSM_STATES_HO = ceil(norm_c*2*nnData.numInputsToNeuronsInLayer(2));
                     weights = [sc_LW{l,l-1}(k,:)'; sc_b{l}(k)];
                     dec_weights_squished = BIPOL_2_UNIPOL(weights);
                     sc_weights = DEC2SC_ARRAY(dec_weights_squished, N);
-                    neuron_out = NEURON(current_input_normal, sc_weights, 0, false, true);
+                    
+                    neuron_out = NEURON_SYNTHESIS(current_input_normal, sc_weights, polynomial_degree, max_iterations, hidden_multiplier, true);
+                    %neuron_out = NEURON(current_input_normal, sc_weights, 0, false, true);
                     current_output = [current_output; neuron_out];
                     
                     %  DEBUGGING
@@ -113,7 +121,8 @@ FSM_STATES_HO = ceil(norm_c*2*nnData.numInputsToNeuronsInLayer(2));
                     weights = [sc_LW{l,l-1}(k,:)'; sc_b{l}(k)];
                     dec_weights_squished = BIPOL_2_UNIPOL(weights);
                     sc_weights = DEC2SC_ARRAY(dec_weights_squished, N);
-                    neuron_out = NEURON(current_input_normal, sc_weights, FSM_STATES_HO, true, false);
+                    neuron_out = NEURON_SYNTHESIS(current_input_normal, sc_weights, polynomial_degree, max_iterations, hidden_multiplier, false);
+                    %neuron_out = NEURON(current_input_normal, sc_weights, FSM_STATES_HO, true, false);
                     current_output = [current_output; neuron_out];
                     
                     %  DEBUGGING
